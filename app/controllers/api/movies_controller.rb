@@ -5,7 +5,8 @@ class Api::MoviesController < ApplicationController
   end
 
   def movie1
-    @movie = Movie.first
+    input = params["variable"]
+    @movie = Movie.find_by(id: input)
     render "movie1.json.jb"
   end
 
