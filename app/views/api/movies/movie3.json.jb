@@ -1,5 +1,0 @@
-{
-  title: @movie3.title,
-  year: @movie3.year,
-  plot: @movie3.plot,
-}

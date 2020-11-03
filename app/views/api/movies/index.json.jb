@@ -1,11 +1,11 @@
 json = []
 i = 0
 while i < @movies.length
-  @movie = @movies[i]
+  movies = @movies[i]
   info = {
-    title: @movie.title,
-    year: @movie.year,
-    plot: @movie.plot,
+    title: movies.title,
+    year: movies.year,
+    plot: movies.plot,
   }
   json << info
   i += 1
