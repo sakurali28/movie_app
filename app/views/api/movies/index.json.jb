@@ -3,9 +3,12 @@ i = 0
 while i < @movies.length
   movies = @movies[i]
   info = {
+    id: movies.id,
     title: movies.title,
     year: movies.year,
     plot: movies.plot,
+    director: movies.director,
+    english: movies.english,
   }
   json << info
   i += 1

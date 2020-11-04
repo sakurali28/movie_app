@@ -15,6 +15,8 @@ class Api::MoviesController < ApplicationController
       title: params["title"],
       year: params["year"],
       plot: params["plot"],
+      director: params["director"],
+      english: params["english"],
     })
     @movie.save
     render "show.json.jb"
@@ -22,11 +24,13 @@ class Api::MoviesController < ApplicationController
 
   def update
     input_id = params["id"]
-    @movie = Product.find_by(id: input_id)
+    @movie = Movie.find_by(id: input_id)
     @movie.id = params["id"] || @movie.id
     @movie.title = params["title"] || @movie.title
     @movie.year = params["year"] || @movie.year
     @movie.plot = params["plot"] || @movie.plot
+    @movie.director = params["director"] || @movie.director
+    @movie.english = params["english"] || @movie.english
 
     @movie.save
     render "show.json.jb"
