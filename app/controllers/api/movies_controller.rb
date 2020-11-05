@@ -18,8 +18,11 @@ class Api::MoviesController < ApplicationController
       director: params["director"],
       english: params["english"],
     })
-    @movie.save
-    render "show.json.jb"
+    if @movie.save
+      render "show.json.jb"
+    else
+      render json: { error: @movie.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update

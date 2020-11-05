@@ -13,5 +13,4 @@ while i < @movies.length
   json << info
   i += 1
 end
-
 return json

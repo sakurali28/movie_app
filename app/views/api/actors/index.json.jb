@@ -3,6 +3,7 @@ i = 0
 while i < @actors.length
   actors = @actors[i]
   info = {
+    id: actors.id,
     first_name: actors.first_name,
     last_name: actors.last_name,
     known_for: actors.known_for,
