@@ -1,6 +1,7 @@
 class Api::MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    # @movies = @movies.find_by english: true
     render "index.json.jb"
   end
 
@@ -28,7 +29,6 @@ class Api::MoviesController < ApplicationController
   def update
     input_id = params["id"]
     @movie = Movie.find_by(id: input_id)
-    @movie.id = params["id"] || @movie.id
     @movie.title = params["title"] || @movie.title
     @movie.year = params["year"] || @movie.year
     @movie.plot = params["plot"] || @movie.plot
