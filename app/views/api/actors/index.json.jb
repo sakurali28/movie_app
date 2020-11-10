@@ -8,6 +8,8 @@ while i < @actors.length
     last_name: actors.last_name,
     known_for: actors.known_for,
     age: actors.age,
+    movie_id: actors.movie_id,
+    movie_plot: actors.movie.plot,
   }
   json << info
   i += 1
