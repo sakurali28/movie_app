@@ -13,7 +13,7 @@ class Api::ActorsController < ApplicationController
 
   def create
     @actor = Actor.new({
-      first_name: params["first_name"],
+      first_name: params[:first_name],
       last_name: params["last_name"],
       known_for: params["known_for"],
       age: params["age"],
