@@ -1,4 +1,6 @@
 class Api::ActorsController < ApplicationController
+  before_action :authenticate_admin :except[:index, :show]
+
   def index
     @actors = Actor.all
     @actors = @actors.all.order(age: :desc)
